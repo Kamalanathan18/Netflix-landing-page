@@ -1,0 +1,363 @@
+@import 'config';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: $secondary-color;
+}
+
+// Home Page ----------------------
+
+.showcase {
+    width: 100%;
+    height: 98vh;
+    background: url(../img/bg-img.jpg) no-repeat center center/cover;
+    color: $primary-color;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 98vh;
+        background: rgba(0, 0, 0, 0.6);
+
+        @media screen and (max-width: 900px) {
+            height: 68vh;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        height: 68vh;
+    }
+}
+
+.showcase-top {
+    height: 90px;
+    position: relative;
+    z-index: 1;
+
+    img {
+        width: 180px;
+        position: absolute;
+        top: -10px;
+        left: 40px;
+
+        @media screen and (max-width: 900px) {
+            width: 140px;
+            left: 20px;
+        }
+    }
+    .btn {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 18px;
+        padding: 5px 15px;
+        text-decoration: none;
+        border: 1px solid $bg-color;
+        background: $bg-color;
+        color: $primary-color;
+        cursor: pointer;
+        border-radius: 4px;
+
+        @media screen and (max-width: 900px) {
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+    }
+}
+
+.showcase-content {
+    position: relative;
+    width: 50%;
+    margin: auto;
+    margin-top: 150px;
+    text-align: center;
+    z-index: 1;
+    @include flex-content(column, center);
+
+    @media screen and (max-width: 1500px) {
+        width: 100%;
+        margin: 0;
+        margin-top: 40px;
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 1.1;
+        margin: 0 0 20px 0;
+
+        @media screen and (max-width: 900px) {
+            font-size: 28px;
+        }
+    }
+    .watch {
+        font-size: 26px;
+        margin: 0 0 30px 0;
+
+        @media screen and (max-width: 900px) {
+            font-size: 20px;
+        }
+    }
+    .member {
+        font-size: 18px;
+        margin: 0 0 20px 0;
+
+        @media screen and (max-width: 900px) {
+            font-size: 18px;
+            padding: 0 60px;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            padding: 0 20px;
+        }
+    }
+    .email-field {
+        @include flex-content(row, center);
+
+        @media screen and (max-width: 900px) {
+            @include flex-content(column, center);
+        }
+
+        input {
+            padding: 25px 5px;
+            width: 500px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            border-bottom-left-radius: 2px;
+            border-top-left-radius: 2px;
+
+            @media screen and (max-width: 900px) {
+                padding: 14px 5px;
+                width: 450px;
+                font-size: 14px;
+                border-radius: 2px;
+                margin-bottom: 10px;
+            }
+
+            @media screen and (max-width: 600px) {
+                padding: 10px 5px;
+                width: 330px;
+            }
+        }
+        .btn-lg {
+            padding: 17px 30px;
+            border: 1px solid $bg-color;
+            background: $bg-color;
+            font-size: 28px;
+            text-decoration: none;
+            color: $primary-color;
+            border-bottom-right-radius: 2px;
+            border-top-right-radius: 2px;
+
+            @media screen and (max-width: 900px) {
+                padding: 10px 15px;
+                font-size: 16px;
+                border-radius: 2px;
+            }
+
+            &:hover {
+                background: red;
+            }
+        }
+    }
+}
+
+// TV Section --------------------------------------
+
+.tv-section {
+    padding: 60px 45px;
+    color: $primary-color;
+
+    .tv-content {
+        max-width: 1100px;
+        margin: auto;
+        @include flex-content(row, center);
+
+        @media screen and (max-width: 900px) {
+            @include flex-content(column, center);
+            text-align: center;
+        }
+
+        .tv-showcase {
+            h1 {
+                font-size: 50px;
+                margin-bottom: 30px;
+
+                @media screen and (max-width: 900px) {
+                    font-size: 30px;
+                }
+            }
+            h4 {
+                font-size: 30px;
+                line-height: 1.5;
+                font-weight: 500;
+                padding-right: 30px;
+
+                @media screen and (max-width: 900px) {
+                    font-size: 20px;
+                    font-weight: 400;
+                    padding: 0;
+                }
+            }
+        }
+
+        .tv-image {
+
+            img {
+                width: 500px;
+
+                @media screen and (max-width: 900px) {
+                    width: 400px;
+                }
+
+                @media screen and (max-width: 600px) {
+                    width: 300px;
+                }
+            }
+        }
+    }
+}
+
+// Accordion -------------------------------------------
+
+.accordion {
+    max-width: 800px;
+    margin: 70px auto;
+    color: $primary-color;
+
+    h1 {
+        font-size: 50px;
+        text-align: center;
+        margin: 50px 0;
+
+        @media screen and (max-width: 900px) {
+            font-size: 30px;
+        }
+    }
+}
+
+.accordion-btn {
+    background-color: #333;
+    color: $primary-color;
+    cursor: pointer;
+    padding: 24px 20px;
+    font-size: 28px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+
+    @media screen and (max-width: 900px) {
+        font-size: 20px;
+        padding: 18px;
+    }
+
+    &:after {
+        content: '\002B';
+        color: $primary-color;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: #333;
+    font-size: 28px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+
+    @media screen and (max-width: 900px) {
+        font-size: 20px;
+    }
+}
+
+.member {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+    text-align: center;
+    margin-top: 60px;
+
+    @media screen and (max-width: 900px) {
+        font-size: 18px;
+        padding: 0 60px;
+        margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+        padding: 0 20px;
+    }
+}
+
+.email-field {
+    @include flex-content(row, center);
+
+    @media screen and (max-width: 900px) {
+        @include flex-content(column, center);
+    }
+
+    input {
+        padding: 25px 5px;
+        width: 500px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        border-bottom-left-radius: 2px;
+        border-top-left-radius: 2px;
+
+        @media screen and (max-width: 900px) {
+            padding: 14px 5px;
+            width: 450px;
+            font-size: 14px;
+            border-radius: 2px;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            padding: 10px 5px;
+            width: 330px;
+        }
+    }
+    .btn-lg {
+        padding: 17px 30px;
+        border: 1px solid $bg-color;
+        background: $bg-color;
+        font-size: 28px;
+        text-decoration: none;
+        color: $primary-color;
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+
+        @media screen and (max-width: 900px) {
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 2px;
+        }
+
+        &:hover {
+            background: red;
+        }
+    }
+}
